@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Контакты ABA_pro — Запись на консультацию, адрес, телефон, режим работы.">
+    <title>Контакты — ABA_pro | Запись на консультацию</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти к содержанию</a>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/ЛОГОТИП №2.png" alt="ABA_pro" class="logo-img">
+                <span class="logo-text">ABA_pro</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="path.html" class="nav-link">Путь ABA_pro</a></li>
+                <li><a href="ethics.html" class="nav-link">Подход и этика</a></li>
+                <li><a href="meetings.html" class="nav-link">Обучающие встречи</a></li>
+                <li><a href="about.html" class="nav-link">О специалисте</a></li>
+                <li><a href="pricing.html" class="nav-link">Стоимость</a></li>
+                <li><a href="documents.html" class="nav-link">Документы</a></li>
+                <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
+                <li><a href="login.html" class="btn btn-primary">🔐 Войти</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Контакты</h1>
+            <p class="breadcrumb"><a href="index.html">Главная</a> / Контакты</p>
+        </div>
+    </section>
+
+    <!-- Основной контент: Контакты + Форма -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- Левая колонка: Инфо -->
+                <div class="contact-info">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: var(--spacing-xl);">Свяжитесь с нами</h2>
+                    
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <strong>Адрес</strong>
+                            <p>г. Краснодар, пос. Яблоновский, Энем, Н. Адыгея</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div>
+                            <strong>Телефон</strong>
+                            <p><a href="tel:+79990000000" style="color: var(--color-text);">+7 (999) 000-00-00</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:info@aba-pro.ru" style="color: var(--color-text);">info@aba-pro.ru</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon">⏰</span>
+                        <div>
+                            <strong>Режим работы</strong>
+                            <p>Пн-Пт: 9:00 - 18:00<br>Сб-Вс: по записи</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка: Форма -->
+                <div class="contact-form-wrapper">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: var(--spacing-xl);">Записаться на консультацию</h2>
+                    
+                    <form id="contactForm" class="booking-form">
+    <!-- Имя -->
+    <div class="form-group">
+        <label for="name">Имя *</label>
+        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+    </div>
+
+    <!-- Телефон -->
+    <div class="form-group">
+        <label for="phone">Телефон *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.ru">
+    </div>
+
+    <!-- Выбор услуги и Формат -->
+    <div class="form-row">
+        <div class="form-group">
+            <label for="service">Выбор услуги *</label>
+            <select id="service" name="service" required>
+                <option value="" disabled selected>Выберите услугу</option>
+                <option value="consultation">Консультация</option>
+                <option value="intensive">Интенсив</option>
+                <option value="program">Программа развития</option>
+                <option value="support">Сопровождение</option>
+                <option value="meeting">Тематическая встреча</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="format">Формат *</label>
+            <select id="format" name="format" required>
+                <option value="" disabled selected>Выберите формат</option>
+                <option value="online">Онлайн</option>
+                <option value="offline">Очно</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Дата и Время (ИЗМЕНЕНО) -->
+    <div class="form-row">
+        <div class="form-group">
+            <label for="date">Дата *</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Время *</label>
+            <input type="text" id="time" name="time" placeholder="Например: 14:30" required>
+        </div>
+    </div>
+
+    <!-- Сообщение -->
+    <div class="form-group">
+        <label for="message">Сообщение / Комментарий</label>
+        <textarea id="message" name="message" rows="3" placeholder="Опишите вашу ситуацию..."></textarea>
+    </div>
+
+    <!-- Чекбокс согласия -->
+    <div class="form-group checkbox-group">
+        <input type="checkbox" id="agreement" name="agreement" required>
+        <label for="agreement">Я согласен с <a href="documents.html">условиями оферты</a> и <a href="privacy.html">политикой обработки данных</a></label>
+    </div>
+
+    <button type="submit" class="btn btn-large btn-primary">🔘 Сделать первый шаг</button>
+</form>
+
+                    <!-- Сообщение об успехе (скрыто по умолчанию) -->
+                    <div id="successMessage" class="success-message" style="display: none;">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">✨</div>
+                        <h3 style="margin-bottom: var(--spacing-md);">Запрос получен</h3>
+                        <p>Спасибо за доверие.<br>Я внимательно изучу ваш запрос и свяжусь с вами в ближайшее время.</p>
+                        <p style="margin-top: var(--spacing-md); font-weight: 600;">Пазлы начинают собираться 🌍🧩</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+  
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/ЛОГОТИП №2.png" alt="ABA_pro" class="footer-logo-img">
+                    <span class="footer-logo-text">ABA_pro</span>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-nav-title">Навигация</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html" class="footer-nav-link">Главная</a></li>
+                        <li><a href="path.html" class="footer-nav-link">Путь ABA_pro</a></li>
+                        <li><a href="ethics.html" class="footer-nav-link">Подход и этика</a></li>
+                        <li><a href="meetings.html" class="footer-nav-link">Обучающие встречи</a></li>
+                        <li><a href="about.html" class="footer-nav-link">О специалисте</a></li>
+                        <li><a href="pricing.html" class="footer-nav-link">Стоимость</a></li>
+                        <li><a href="documents.html" class="footer-nav-link">Документы</a></li>
+                        <li><a href="contacts.html" class="footer-nav-link">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-specialist-card">
+                    <p class="specialist-label">Специалист:</p>
+                    <h3 class="specialist-name">Слесь Ирина Анатольевна</h3>
+                    <p class="specialist-role">Поведенческий аналитик, куратор кейсов</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ABA_pro. Все права защищены. | 
+                   <a href="privacy.html" class="footer-link">Политика конфиденциальности</a> | 
+                   🧩 Каждый пазл важен</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Скрипт обработки формы (имитация отправки)
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+
+            if(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Останавливаем реальную отправку
+                    form.style.display = 'none'; // Скрываем форму
+                    successMessage.style.display = 'block'; // Показываем успех
+                    
+                    // В реальном проекте здесь был бы fetch() запрос к серверу
+                    console.log('Форма отправлена');
+                });
+            }
+
+            // Установка минимальной даты (сегодня)
+            const dateInput = document.getElementById('date');
+            if(dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+            }
+        });
+    </script>
+</body>
+</html>
