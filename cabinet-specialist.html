@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет Владельца — ABA_pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/ЛОГОТИП №2.png" alt="ABA_pro" class="logo-img">
+                <span class="logo-text">ABA_pro (Admin)</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">На сайт</a></li>
+                <li><a href="contacts.html" class="nav-link">Выйти</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 100px; padding-bottom: 50px;">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="dashboard-welcome">
+                    <h2>👋 Здравствуйте, Ирина!</h2>
+                    <p>Ваша статистика и управление записями</p>
+                </div>
+                <a href="contacts.html" class="btn">+ Добавить встречу</a>
+            </div>
+
+            <!-- Статистика -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>12</h3>
+                    <p>Активных встреч</p>
+                </div>
+                <div class="stat-card">
+                    <h3>8</h3>
+                    <p>Записей на сегодня</p>
+                </div>
+                <div class="stat-card" style="border-top-color: var(--color-green);">
+                    <h3>45 000 ₽</h3>
+                    <p>Доход за месяц</p>
+                </div>
+                <div class="stat-card" style="border-top-color: var(--color-sand);">
+                    <h3>3</h3>
+                    <p>Новых заявки</p>
+                </div>
+            </div>
+
+            <!-- Таблица заявок -->
+            <div class="data-table-container">
+                <h3 style="margin: 0; color: var(--color-text);">📅 Последние заявки</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Клиент</th>
+                            <th>Услуга</th>
+                            <th>Дата</th>
+                            <th>Статус</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Мария Иванова</td>
+                            <td>Консультация (Онлайн)</td>
+                            <td>20.04.2026, 14:00</td>
+                            <td><span class="status-badge status-paid">Оплачено</span></td>
+                            <td><a href="#" style="color: var(--color-blue);">Ссылка на звонок</a></td>
+                        </tr>
+                        <tr>
+                            <td>Алексей Петров</td>
+                            <td>Интенсив (Очно)</td>
+                            <td>21.04.2026, 10:00</td>
+                            <td><span class="status-badge status-pending">Ожидает оплаты</span></td>
+                            <td><button class="btn" style="padding: 5px 10px; font-size: 0.8rem;">Написать</button></td>
+                        </tr>
+                        <tr>
+                            <td>Елена Сидорова</td>
+                            <td>Курс "Без выгорания"</td>
+                            <td>Доступ навсегда</td>
+                            <td><span class="status-badge status-paid">Активен</span></td>
+                            <td><a href="#" style="color: var(--color-blue);">Управление</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
