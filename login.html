@@ -3,302 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Вход в личный кабинет ABA_pro — доступ к программам, встречам и материалам для клиентов и специалистов.">
-    <meta name="robots" content="noindex, nofollow">
     <title>Вход в личный кабинет — ABA_pro</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-    
     <style>
-    .auth-section {
-        min-height: 100vh;
-        background: linear-gradient(135deg, #E8D5B7 0%, #D4E8DC 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 80px 20px 40px;
-    }
-    .auth-container {
-        background: #FFFFFF;
-        padding: 48px;
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(74, 85, 104, 0.12);
-        width: 100%;
-        max-width: 450px;
-    }
-    .auth-header {
-        text-align: center;
-        margin-bottom: 32px;
-    }
-    .auth-header h1 {
-        font-size: 2rem;
-        color: #4A5568;
-        margin-bottom: 8px;
-        font-weight: 700;
-    }
-    .auth-header p {
-        color: #718096;
-        font-size: 1rem;
-    }
-    .form-group {
-        margin-bottom: 20px;
-    }
-    .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        color: #4A5568;
-        font-weight: 600;
-        font-size: 0.95rem;
-    }
-    .form-group input {
-        width: 100%;
-        padding: 14px 16px;
-        border: 2px solid #E8D5B7;
-        border-radius: 12px;
-        font-size: 1rem;
-        font-family: inherit;
-        transition: all 0.3s ease;
-    }
-    .form-group input:focus {
-        outline: none;
-        border-color: #9FB8C4;
-        box-shadow: 0 0 0 3px rgba(159, 184, 196, 0.2);
-    }
-    .form-options {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 24px;
-        font-size: 0.9rem;
-    }
-    .form-options label {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #718096;
-        cursor: pointer;
-    }
-    .form-options a {
-        color: #9FB8C4;
-        font-weight: 600;
-    }
-    .btn-submit {
-        width: 100%;
-        padding: 16px;
-        background: linear-gradient(135deg, #9FB8C4 0%, #B8D4C4 100%);
-        color: #FFFFFF;
-        border: none;
-        border-radius: 12px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-family: inherit;
-    }
-    .btn-submit:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(159, 184, 196, 0.4);
-    }
-    .btn-submit:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-        transform: none !important;
-    }
-    .auth-footer {
-        text-align: center;
-        margin-top: 32px;
-        padding-top: 24px;
-        border-top: 2px solid #F0E8D8;
-    }
-    .auth-footer a {
-        color: #9FB8C4;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.3s ease;
-    }
-    .auth-footer a:hover {
-        color: #4A5568;
-    }
-    .demo-box {
-        background: #F8F6F0;
-        padding: 20px;
-        border-radius: 12px;
-        margin-top: 24px;
-        border-left: 4px solid #B8D4C4;
-    }
-    .demo-box h4 {
-        color: #4A5568;
-        margin-bottom: 12px;
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    .demo-box .demo-account {
-        margin-bottom: 12px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid #E8D5B7;
-    }
-    .demo-box .demo-account:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-    }
-    .demo-box strong {
-        color: #4A5568;
-        font-size: 0.9rem;
-    }
-    .demo-box code {
-        display: inline-block;
-        background: #FFFFFF;
-        padding: 4px 8px;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        color: #4A5568;
-        margin: 4px 0;
-        font-family: 'Courier New', monospace;
-    }
-    .demo-box .warning {
-        color: #F59E0B;
-        font-size: 0.85rem;
-        margin-top: 12px;
-        display: flex;
-        align-items: flex-start;
-        gap: 6px;
-    }
-    .error-message {
-        display: none;
-        background: #FED7D7;
-        border: 2px solid #FC8181;
-        color: #C53030;
-        padding: 12px 16px;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        font-size: 0.95rem;
-    }
-    @media (max-width: 768px) {
-        .auth-container {
-            padding: 32px 24px;
-        }
-    }
+        .auth-container { max-width: 400px; margin: 100px auto; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
+        .auth-container h2 { color: var(--color-text); margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--color-text-light); }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 2px solid var(--color-sand-light); border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+        .form-group input:focus { border-color: var(--color-blue); outline: none; }
+        .btn-auth { width: 100%; padding: 14px; background: var(--color-blue); color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .btn-auth:hover { background: var(--color-blue-dark); }
+        .error-msg { color: #d32f2f; background: #ffebee; padding: 10px; border-radius: 6px; margin-bottom: 20px; display: none; font-size: 0.9rem; }
+        .toggle-link { margin-top: 20px; font-size: 0.9rem; }
+        .toggle-link a { color: var(--color-blue); text-decoration: none; font-weight: 600; cursor: pointer; }
     </style>
 </head>
 <body>
-    <section class="auth-section">
-        <div class="auth-container">
-            <div class="auth-header">
-                <h1>🔐 Вход</h1>
-                <p>Войдите в личный кабинет ABA_pro</p>
+    <div class="auth-container">
+        <h2 id="authTitle">🔐 Вход</h2>
+        <div id="errorMsg" class="error-msg"></div>
+
+        <form id="authForm">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="ваш@email.com" required>
             </div>
-            
-            <div class="error-message" id="errorMessage">
-                ❌ Неверный email или пароль
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="password" placeholder="••••••" required>
             </div>
-            
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email 📧</label>
-                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Пароль 🔒</label>
-                    <input type="password" id="password" name="password" placeholder="Ваш пароль" required>
-                </div>
-                
-                <div class="form-options">
-                    <label>
-                        <input type="checkbox" name="remember">
-                        Запомнить меня
-                    </label>
-                    <a href="#" style="color: #9FB8C4;">Забыли пароль?</a>
-                </div>
-                
-                <button type="submit" class="btn-submit" id="submitBtn">
-                    Войти
-                </button>
-            </form>
-            
-            <div class="demo-box">
-                <h4>📋 Демо-доступ для тестирования:</h4>
-                
-                <div class="demo-account">
-                    <strong>Владелец:</strong><br>
-                    <code>owner@aba-pro.ru</code><br>
-                    <code>owner123</code>
-                </div>
-                
-                <div class="demo-account">
-                    <strong>Клиент:</strong><br>
-                    <code>client@aba-pro.ru</code><br>
-                    <code>client123</code>
-                </div>
-                
-                <p class="warning">
-                    ⚠️ Только для разработки. В продакшене используйте безопасную аутентификацию.
-                </p>
+            <div class="form-group" id="roleGroup" style="display:none;">
+                <label>Кто вы?</label>
+                <select id="role">
+                    <option value="client">🧩 Я Клиент</option>
+                    <option value="specialist">👤 Я Специалист</option>
+                </select>
             </div>
-            
-            <div class="auth-footer">
-                <p style="margin-bottom: 16px;">
-                    <a href="index.html">← Вернуться на главную</a>
-                </p>
-                <p>
-                    Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
-                </p>
-            </div>
+            <button type="submit" class="btn-auth" id="submitBtn">Войти</button>
+        </form>
+
+        <div class="toggle-link">
+            <span id="toggleText">Нет аккаунта?</span> <a id="toggleAuth">Зарегистрироваться</a>
         </div>
-    </section>
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('loginForm');
+        
+        <p style="margin-top:25px;font-size:0.85rem;color:#888;">
+            ⚠️ Тестовый режим. Не используйте реальные данные.
+        </p>
+    </div>
+
+    <script type="module">
+        import { 
+            auth, db, 
+            signInWithEmailAndPassword, 
+            createUserWithEmailAndPassword, 
+            onAuthStateChanged 
+        } from './firebase-config.js';
+        import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+        let isLogin = true;
+        const toggleAuth = document.getElementById('toggleAuth');
+        const toggleText = document.getElementById('toggleText');
+        const authTitle = document.getElementById('authTitle');
         const submitBtn = document.getElementById('submitBtn');
-        const errorMessage = document.getElementById('errorMessage');
-        const emailInput = document.getElementById('email');
-        const passwordInput = document.getElementById('password');
-        
-        // Демо-аккаунты
-        const demoAccounts = {
-            'owner@aba-pro.ru': 'owner123',
-            'client@aba-pro.ru': 'client123'
-        };
-        
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const email = emailInput.value.trim();
-                const password = passwordInput.value;
-                
-                // Блокировка кнопки
-                submitBtn.disabled = true;
-                submitBtn.textContent = '⏳ Проверка...';
-                errorMessage.style.display = 'none';
-                
-                // Имитация проверки (замените на реальную авторизацию)
-                setTimeout(function() {
-                    // Проверка демо-аккаунтов
-                    if (demoAccounts[email] && demoAccounts[email] === password) {
-                        console.log('✅ Успешный вход:', email);
-                        alert('✅ Вход успешен! Добро пожаловать, ' + email);
-                        // Перенаправление в личный кабинет
-                        // window.location.href = 'dashboard.html';
+        const roleGroup = document.getElementById('roleGroup');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // Переключение Вход/Регистрация
+        toggleAuth.addEventListener('click', () => {
+            isLogin = !isLogin;
+            authTitle.textContent = isLogin ? "🔐 Вход" : "📝 Регистрация";
+            submitBtn.textContent = isLogin ? "Войти" : "Зарегистрироваться";
+            toggleText.textContent = isLogin ? "Нет аккаунта? " : "Есть аккаунт? ";
+            toggleAuth.textContent = isLogin ? "Зарегистрироваться" : "Войти";
+            roleGroup.style.display = isLogin ? "none" : "block";
+            errorMsg.style.display = 'none';
+        });
+
+        // Обработка формы
+        document.getElementById('authForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            errorMsg.style.display = 'none';
+
+            try {
+                if (isLogin) {
+                    await signInWithEmailAndPassword(auth, email, password);
+                } else {
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    const user = userCredential.user;
+                    await setDoc(doc(db, "users", user.uid), {
+                        email: email,
+                        role: role,
+                        name: email.split('@')[0],
+                        createdAt: new Date()
+                    });
+                    alert("✅ Регистрация успешна!");
+                }
+            } catch (error) {
+                showError(error.message);
+            }
+        });
+
+        // Отслеживание состояния входа
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                try {
+                    const userDoc = await getDoc(doc(db, "users", user.uid));
+                    if (userDoc.exists()) {
+                        const userData = userDoc.data();
+                        window.location.href = userData.role === 'specialist' 
+                            ? 'cabinet-specialist.html' 
+                            : 'cabinet-client.html';
                     } else {
-                        console.log('❌ Ошибка входа:', email);
-                        errorMessage.style.display = 'block';
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Войти';
-                        passwordInput.value = '';
-                        passwordInput.focus();
+                        showError("❌ Данные пользователя не найдены");
                     }
-                }, 1000);
-            });
+                } catch (err) {
+                    showError("Ошибка загрузки данных: " + err.message);
+                }
+            }
+        });
+
+        function showError(msg) {
+            let friendly = "Произошла ошибка";
+            if (msg.includes("user-not-found") || msg.includes("wrong-password")) 
+                friendly = "❌ Неверный email или пароль";
+            else if (msg.includes("email-already-in-use")) 
+                friendly = "❌ Этот email уже зарегистрирован";
+            else if (msg.includes("weak-password")) 
+                friendly = "❌ Пароль должен быть минимум 6 символов";
+            
+            errorMsg.textContent = friendly;
+            errorMsg.style.display = 'block';
         }
-        
-        console.log('✅ Страница входа загружена');
-    });
     </script>
 </body>
 </html>
