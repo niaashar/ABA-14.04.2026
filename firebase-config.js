@@ -29,26 +29,16 @@ const firebaseConfig = {
   appId: "1:166721320978:web:f8488ac6a6125c924ac0cb"
 };
 
-// Инициализация
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Экспорт для использования в других файлах
 export { 
-  auth, 
-  db, 
+  auth, db, 
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword, 
   signOut, 
   onAuthStateChanged, 
-  doc, 
-  setDoc, 
-  getDoc, 
-  collection, 
-  addDoc, 
-  query, 
-  where, 
-  getDocs, 
-  orderBy 
+  doc, setDoc, getDoc, 
+  collection, addDoc, query, where, getDocs, orderBy 
 };
