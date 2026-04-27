@@ -46,10 +46,6 @@
         <div class="toggle-link">
             <span id="toggleText">Нет аккаунта?</span> <a id="toggleAuth">Зарегистрироваться</a>
         </div>
-        
-        <p style="margin-top:25px;font-size:0.85rem;color:#888;">
-            ⚠️ Тестовый режим. Не используйте реальные данные.
-        </p>
     </div>
 
     <script type="module">
@@ -63,24 +59,19 @@
 
         let isLogin = true;
         const toggleAuth = document.getElementById('toggleAuth');
-        const toggleText = document.getElementById('toggleText');
         const authTitle = document.getElementById('authTitle');
         const submitBtn = document.getElementById('submitBtn');
         const roleGroup = document.getElementById('roleGroup');
         const errorMsg = document.getElementById('errorMsg');
 
-        // Переключение Вход/Регистрация
         toggleAuth.addEventListener('click', () => {
             isLogin = !isLogin;
             authTitle.textContent = isLogin ? "🔐 Вход" : "📝 Регистрация";
             submitBtn.textContent = isLogin ? "Войти" : "Зарегистрироваться";
-            toggleText.textContent = isLogin ? "Нет аккаунта? " : "Есть аккаунт? ";
-            toggleAuth.textContent = isLogin ? "Зарегистрироваться" : "Войти";
             roleGroup.style.display = isLogin ? "none" : "block";
             errorMsg.style.display = 'none';
         });
 
-        // Обработка формы
         document.getElementById('authForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = document.getElementById('email').value;
@@ -93,51 +84,33 @@
                     await signInWithEmailAndPassword(auth, email, password);
                 } else {
                     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                    const user = userCredential.user;
-                    await setDoc(doc(db, "users", user.uid), {
+                    await setDoc(doc(db, "users", userCredential.user.uid), {
                         email: email,
                         role: role,
-                        name: email.split('@')[0],
                         createdAt: new Date()
                     });
                     alert("✅ Регистрация успешна!");
                 }
             } catch (error) {
-                showError(error.message);
+                let msg = "Ошибка";
+                if (error.message.includes("user-not-found") || error.message.includes("wrong-password")) 
+                    msg = "❌ Неверный email или пароль";
+                else if (error.message.includes("email-already-in-use")) 
+                    msg = "❌ Email уже зарегистрирован";
+                errorMsg.textContent = msg;
+                errorMsg.style.display = 'block';
             }
         });
 
-        // Отслеживание состояния входа
         onAuthStateChanged(auth, async (user) => {
             if (user) {
-                try {
-                    const userDoc = await getDoc(doc(db, "users", user.uid));
-                    if (userDoc.exists()) {
-                        const userData = userDoc.data();
-                        window.location.href = userData.role === 'specialist' 
-                            ? 'cabinet-specialist.html' 
-                            : 'cabinet-client.html';
-                    } else {
-                        showError("❌ Данные пользователя не найдены");
-                    }
-                } catch (err) {
-                    showError("Ошибка загрузки данных: " + err.message);
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                if (userDoc.exists()) {
+                    const role = userDoc.data().role;
+                    window.location.href = role === 'specialist' ? 'cabinet-specialist.html' : 'cabinet-client.html';
                 }
             }
         });
-
-        function showError(msg) {
-            let friendly = "Произошла ошибка";
-            if (msg.includes("user-not-found") || msg.includes("wrong-password")) 
-                friendly = "❌ Неверный email или пароль";
-            else if (msg.includes("email-already-in-use")) 
-                friendly = "❌ Этот email уже зарегистрирован";
-            else if (msg.includes("weak-password")) 
-                friendly = "❌ Пароль должен быть минимум 6 символов";
-            
-            errorMsg.textContent = friendly;
-            errorMsg.style.display = 'block';
-        }
     </script>
 </body>
 </html>
